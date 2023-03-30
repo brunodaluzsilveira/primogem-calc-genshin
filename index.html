@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primogem Calculator</title>
+    <link rel="stylesheet" href="estilos/style.css">
+</head>
+<body>
+    <header>
+        <h1>Primogem Calculator</h1>
+    </header>
+    <main>
+        <section>
+            
+        </section>
+        <section>
+            <label for="igematual">Quantas gemas você tem?</label><br>
+            <input type="number" name="gematual" id="igematual" placeholder="0"><br>
+
+            <label for="idias">Por quantos dias você pretende juntar gemas?</label><br>
+            <input type="number" name="dias" id="idias" placeholder="0"><br>
+            
+            <p>Quantas estrelas você pega no abismo do piso 9 ao 12?</p>
+            <select name="abyss" id="iabyss">
+                <option value="">--Escolha--</option>
+                <option value="0">Não faço abismo</option>
+                <option value="50">3-5 ⭐</option>
+                <option value="100">6-8 ⭐</option>
+                <option value="150">9-11 ⭐</option>
+                <option value="200">12-14 ⭐</option>
+                <option value="250">15-17 ⭐</option>
+                <option value="300">18-20 ⭐</option>
+                <option value="350">21-23 ⭐</option>
+                <option value="400">24-26 ⭐</option>
+                <option value="450">27-29 ⭐</option>
+                <option value="500">30-32 ⭐</option>
+                <option value="550">33-35 ⭐</option>
+                <option value="600">36 ⭐</option>
+            </select>
+
+            <div id="teste">Teste</div>
+
+            <input type="button" value="Calcular" onclick="enviou()">
+            
+
+
+        </section>
+    </main>
+    <footer>
+        
+    </footer>
+    <script>
+        var gema = document.getElementById('iabyss')
+        var teste = document.getElementById('teste')
+
+        gema.addEventListener('change', function enviou() {
+            teste.innerHTML = gema.value
+        })
+    </script>
+</body>
+</html>
