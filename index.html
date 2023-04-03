@@ -13,51 +13,110 @@
     </header>
     <main>
         <section>
+            <!--Quantidade de gemas-->
+            <p>
+                <label for="igematual">Quantas gemas você tem?</label><br>
+                <input type="number" name="gematual" id="igematual" placeholder="0">
+            </p>
+
+            <!--Dias que vai juntar-->
+            <p>
+                <label for="idias">Por quantos dias você pretende juntar gemas?</label><br>
+                <input type="number" name="dias" id="idias" placeholder="0">
+            </p>
+
+            <!--Benção-->
+            <p>
+                <label for="ibencao">Você possui benção ativa?</label><br>
+                <input type="radio" name="bencao" id="ibenyes" onchange="Benyes()"><label for="ibenyes">Sim</label><br>
+                <input type="radio" name="bencao" id="ibenno" onchange="Benno()"><label for="ibenno">Não</label>
+            </p>
+
+            <div id="bencaostyle">
+                <label for="idiasbencao">Quantos dias de benção restantes?</label><br>
+                <input type="number" name="diasbencao" id="idiasbencao" placeholder="0">
+            </div>
             
-        </section>
-        <section>
-            <label for="igematual">Quantas gemas você tem?</label><br>
-            <input type="number" name="gematual" id="igematual" placeholder="0"><br>
+            <!--Abismo-->
+            <p>
+                <label for="iabyss">Quantas ⭐ você conseuge pegar no Abismo (piso 9 ao 12)</label><br>
+                <select name="abyss" id="iabyss">
+                    <option value="">--Escolha--</option>
+                    <option value="0">Não faço abismo</option>
+                    <option value="50">3-5 ⭐</option>
+                    <option value="100">6-8 ⭐</option>
+                    <option value="150">9-11 ⭐</option>
+                    <option value="200">12-14 ⭐</option>
+                    <option value="250">15-17 ⭐</option>
+                    <option value="300">18-20 ⭐</option>
+                    <option value="350">21-23 ⭐</option>
+                    <option value="400">24-26 ⭐</option>
+                    <option value="450">27-29 ⭐</option>
+                    <option value="500">30-32 ⭐</option>
+                    <option value="550">33-35 ⭐</option>
+                    <option value="600">36 ⭐</option>
+                </select>
+            </p>
 
-            <label for="idias">Por quantos dias você pretende juntar gemas?</label><br>
-            <input type="number" name="dias" id="idias" placeholder="0"><br>
-            
-            <p>Quantas estrelas você pega no abismo do piso 9 ao 12?</p>
-            <select name="abyss" id="iabyss">
-                <option value="">--Escolha--</option>
-                <option value="0">Não faço abismo</option>
-                <option value="50">3-5 ⭐</option>
-                <option value="100">6-8 ⭐</option>
-                <option value="150">9-11 ⭐</option>
-                <option value="200">12-14 ⭐</option>
-                <option value="250">15-17 ⭐</option>
-                <option value="300">18-20 ⭐</option>
-                <option value="350">21-23 ⭐</option>
-                <option value="400">24-26 ⭐</option>
-                <option value="450">27-29 ⭐</option>
-                <option value="500">30-32 ⭐</option>
-                <option value="550">33-35 ⭐</option>
-                <option value="600">36 ⭐</option>
-            </select>
-
-            <div id="teste">Teste</div>
-
-            <input type="button" value="Calcular" onclick="enviou()">
-            
-
-
+            <div id="resultado">Teste</div>
+            <input type="button" value="Calcular" onclick="Calc()">
         </section>
     </main>
     <footer>
         
     </footer>
     <script>
-        var gema = document.getElementById('iabyss')
-        var teste = document.getElementById('teste')
-
-        gema.addEventListener('change', function enviou() {
-            teste.innerHTML = gema.value
+        var txtQtdGemas = document.getElementById('igematual')
+        var txtQtdDias = document.getElementById('idias')
+        var txtDiasBencao = document.getElementById('idiasbencao')
+        var txtAbismo = document.getElementById('iabyss')
+        txtAbismo.addEventListener('change', function enviou() {
+            abismo = Number(txtAbismo.value)
         })
+        var resultado = document.getElementById('resultado')
+
+        //funções para aparecer e esconder a div sobre dias de benção
+        function Benyes() {
+            if (bencaostyle.style.display == 'none') {
+                bencaostyle.style.display = 'block'
+            } else {
+                bencaostyle.style.display = 'block'
+            } //por algum motivo sem essa parte não funciona
+        }
+
+        function Benno() {
+            if (bencaostyle.style.display == 'block') {
+                bencaostyle.style.display = 'none'
+            }
+        }
+        
+        // função para fazer o calculo
+        function Calc() {
+            var qtdGemas = Number(txtQtdGemas.value)
+            var qtdDias = Number(txtQtdDias.value)
+            var qtdDiasBencao = Number(txtDiasBencao.value)
+
+            //calc diárias
+            var totalGemasDiarias = qtdDias * 60
+
+            //calc benção
+            if (qtdDiasBencao >= qtdDias) {
+                var totalBencao = 90 * qtdDias
+            } else {
+                var totalBencao = 90 * qtdDiasBencao
+            }
+
+            //calc abismo
+            var vezes = qtdDias / 15
+            var totalAbismo = abismo * Math.ceil(vezes)
+
+            //calc total
+            var total = totalBencao + totalAbismo + qtdGemas + totalGemasDiarias
+            var tiros = parseInt(total / 160)
+
+            //resultado
+            resultado.innerHTML = `Em ${qtdDias} dias, você vai conseguir juntar ${total} gemas. ${tiros} destinos entrelaçados.`
+        }
     </script>
 </body>
 </html>
