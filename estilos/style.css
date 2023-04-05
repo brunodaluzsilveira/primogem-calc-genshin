@@ -116,3 +116,20 @@ div#bencaostyle {
     margin-top: -10px;
     display: none;
 }
+
+footer {
+    background-color: var(--cor-terciaria);
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+}
+
+footer a {
+    text-decoration: underline;
+    color: white;
+}
+
+footer a:hover {
+    text-decoration: none;
+    color: var(--cor-principal);
+}
