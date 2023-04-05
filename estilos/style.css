@@ -88,9 +88,13 @@ section#result {
 }
 
 div#resultado {
+    background-color: #ffffff86;
+    color: #113255;
+    border-radius: 20px;
     font-weight: bolder;
-    font-size: 1.5em;
+    font-size: 1.2em;
     text-align: center;
+    padding: 10px;
 }
 
 p {
