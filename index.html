@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Primogem Calculator</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="estilos/style.css">
 </head>
 <body>
@@ -12,7 +13,7 @@
         <h1>Primogem Calculator</h1>
     </header>
     <main>
-        <section>
+        <section id="perguntas">
             <!--Quantidade de gemas-->
             <p>
                 <label for="igematual">Quantas gemas você tem?</label><br>
@@ -57,9 +58,12 @@
                     <option value="600">36 ⭐</option>
                 </select>
             </p>
-
+            <div id="botaocalculo">
+                <input id="botao" type="button" value="Calcular" onclick="Calc()">
+            </div>
+        </section>
+        <section id="result">
             <div id="resultado">Teste</div>
-            <input type="button" value="Calcular" onclick="Calc()">
         </section>
     </main>
     <footer>

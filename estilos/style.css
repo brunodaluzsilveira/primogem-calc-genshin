@@ -1,16 +1,88 @@
 @charset "UTF-8";
 
+@font-face {
+    font-family: "Genshin-font";
+    src: url(../fonts/zh-cn.ttf);   
+}
+
+:root {
+    --cor-principal: #75CDFF;
+    --cor-secundaria: #5CB9F2;
+    --cor-terciaria: #238EFF;
+}
+
 * {
     margin: 0px;
     padding: 0px;
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Genshin-font";
+    background: url(../imagens/background-portrait-blur.jpg) center center no-repeat fixed;
+    background-size: cover;
+}
+
+header {
+    color: aliceblue;
+    text-align: center;
+    padding: 20px;
+}
+
+header > h1 {
+    background-color: var(--cor-principal);
+    border-radius: 20px;
+    padding: 10px;
+}
+
+section {
+    border: 1px solid var(--cor-secundaria);
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+    padding: 30px;
+}
+
+section#perguntas {
+    background-color: rgba(52, 182, 214, 0.37);    
+    border-bottom: none;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+div#botaocalculo {
+    padding-top: 20px;
+    margin: auto;
+    text-align: center;
+}
+
+input#botao {
+    font-family: "Genshin-font";
+    font-size: 2.2em;
+    color: var(--cor-principal);
+    border: 2px solid var(--cor-secundaria);
+    border-radius: 15px;
+    padding-top: 10px;
+    padding-right: 15px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+}
+
+input#botao:hover {
+    color: white;
+    background-color: var(--cor-principal);
+    transition-duration: 0.3s;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.521);
+}
+
+section#result {
+    background-color: rgba(52, 182, 214, 0.37);
+    margin-top: 0px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 p {
-    padding-bottom: 10px;
+    padding: 10px;
 }
 
 div#bencaostyle {
