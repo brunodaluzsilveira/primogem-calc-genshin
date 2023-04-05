@@ -17,13 +17,13 @@
             <!--Quantidade de gemas-->
             <p>
                 <label for="igematual">Quantas gemas você tem?</label><br>
-                <input type="number" name="gematual" id="igematual" placeholder="0">
+                <input type="number" name="gematual" id="igematual" placeholder="0" class="camporesp">
             </p>
 
             <!--Dias que vai juntar-->
             <p>
                 <label for="idias">Por quantos dias você pretende juntar gemas?</label><br>
-                <input type="number" name="dias" id="idias" placeholder="0">
+                <input type="number" name="dias" id="idias" placeholder="0" class="camporesp">
             </p>
 
             <!--Benção-->
@@ -35,13 +35,13 @@
 
             <div id="bencaostyle">
                 <label for="idiasbencao">Quantos dias de benção restantes?</label><br>
-                <input type="number" name="diasbencao" id="idiasbencao" placeholder="0">
+                <input type="number" name="diasbencao" id="idiasbencao" placeholder="0" class="camporesp">
             </div>
             
             <!--Abismo-->
             <p>
                 <label for="iabyss">Quantas ⭐ você consegue pegar no Abismo (piso 9 ao 12)?</label><br>
-                <select name="abyss" id="iabyss">
+                <select name="abyss" id="iabyss" class="camporesp">
                     <option value="">--Escolha--</option>
                     <option value="0">Não faço abismo</option>
                     <option value="50">3-5 ⭐</option>
@@ -63,7 +63,7 @@
             </div>
         </section>
         <section id="result">
-            <div id="resultado">Teste</div>
+            <div id="resultado">Resultado:</div>
         </section>
     </main>
     <footer>
@@ -119,7 +119,7 @@
             var tiros = parseInt(total / 160)
 
             //resultado
-            resultado.innerHTML = `Em ${qtdDias} dias, você vai conseguir juntar ${total} gemas. ${tiros} destinos entrelaçados.`
+            resultado.innerHTML = `Resultado:<br><br> Dias: ${qtdDias}<br>Diárias: ${totalGemasDiarias}<br>Benção: ${totalBencao}<br>Abismo: ${totalAbismo}<br><br>Total de gemas: ${total}`
         }
     </script>
 </body>

@@ -49,6 +49,11 @@ section#perguntas {
     border-top-left-radius: 10px;
 }
 
+.camporesp {
+    border: 2px solid var(--cor-secundaria);
+    border-radius: 5px;
+}
+
 div#botaocalculo {
     padding-top: 20px;
     margin: auto;
@@ -59,7 +64,7 @@ input#botao {
     font-family: "Genshin-font";
     font-size: 2.2em;
     color: var(--cor-principal);
-    border: 2px solid var(--cor-secundaria);
+    border: 2px double var(--cor-secundaria);
     border-radius: 15px;
     padding-top: 10px;
     padding-right: 15px;
@@ -70,6 +75,7 @@ input#botao {
 input#botao:hover {
     color: white;
     background-color: var(--cor-principal);
+    border: 2px double white;
     transition-duration: 0.3s;
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.521);
 }
@@ -79,6 +85,12 @@ section#result {
     margin-top: 0px;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
+}
+
+div#resultado {
+    font-weight: bolder;
+    font-size: 1.5em;
+    text-align: center;
 }
 
 p {
