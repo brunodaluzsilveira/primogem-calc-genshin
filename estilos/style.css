@@ -47,11 +47,21 @@ section#perguntas {
     border-bottom: none;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
+    text-align: justify;
 }
 
 .camporesp {
     border: 2px solid var(--cor-secundaria);
     border-radius: 5px;
+    width: 50px;
+    text-align: center;
+}
+
+.campoesc {
+    border: 2px solid var(--cor-secundaria);
+    border-radius: 5px;
+    width: 100px;
+    text-align: center;
 }
 
 div#botaocalculo {
